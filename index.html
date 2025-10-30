@@ -1,9 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>स्वागत</title>
+<meta charset="UTF-8">
+<title>महाराष्ट्र गृह खाते - शासन निर्णय</title>
+<style>
+body { font-family: Arial; padding: 10px; }
+.search-box { width: 100%; padding: 10px; font-size: 18px; }
+ul li { padding: 6px; font-size: 18px; border-bottom: 1px solid #ddd; }
+</style>
 </head>
 <body>
-<h1>महाराष्ट्र गृह खात्याचे शासन निर्णय — लवकरच!</h1>
+
+<h2>🔎 शासन निर्णय शोधा</h2>
+<input type="text" id="search" class="search-box" placeholder="उदा: पती पत्नी एकत्रीकरण, रजा नियम, बदली...">
+
+<ul id="grList">
+  <li><a href="patipatni-ekatrikaran.pdf" target="_blank">पती पत्नी एकत्रीकरण शासन निर्णय</a></li>
+  <li><a href="raja-niyam.pdf" target="_blank">रजा नियम सुधारणा</a></li>
+  <li><a href="agni-shaman.pdf" target="_blank">अग्निशमन दल मानदेय</a></li>
+  <li><a href="bandobast-bill.pdf" target="_blank">बंदोबस्त खर्च परिपत्रक</a></li>
+</ul>
+
+<script>
+document.getElementById('search').addEventListener('keyup', function(){
+  let text = this.value.toLowerCase();
+  let items = document.querySelectorAll('#grList li');
+  items.forEach(i => {
+    i.style.display = i.innerText.toLowerCase().includes(text) ? '' : 'none';
+  });
+});
+</script>
+
 </body>
 </html>
